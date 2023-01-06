@@ -1,0 +1,3 @@
+rootProject.name = 'Commerce-Auth'
+include ':Commerce-Common:lib'
+project(':Commerce-Common:lib').projectDir = new File(settingsDir, '../Commerce-Common/lib')
