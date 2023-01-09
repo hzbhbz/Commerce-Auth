@@ -25,7 +25,7 @@ public class SwaggerConfig {
 	@Bean
 	public Docket api() {
 		return new Docket(DocumentationType.SWAGGER_2).consumes(getConsumeContentTypes())
-				.host("combb.auth.com:8080")
+				.host("combb.auth.com:9080")
 				// swagger에서 jwt 토큰값 넣기위한 설정
 				.securityContexts(Arrays.asList(securityContext()))
 				// swagger에서 jwt 토큰값 넣기위한 설정
