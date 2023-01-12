@@ -8,8 +8,10 @@ import java.util.Set;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
+import springfox.documentation.service.ApiInfo;
 import springfox.documentation.service.ApiKey;
 import springfox.documentation.service.AuthorizationScope;
 import springfox.documentation.service.SecurityReference;
@@ -25,13 +27,13 @@ public class SwaggerConfig {
 	@Bean
 	public Docket api() {
 		return new Docket(DocumentationType.SWAGGER_2).consumes(getConsumeContentTypes())
-				.host("combb.auth.com:9080")
+				.host("combb.autn.com:9080")
 				.apiInfo(getApiInfo())
 				// swagger에서 jwt 토큰값 넣기위한 설정
 				.securityContexts(Arrays.asList(securityContext()))
 				// swagger에서 jwt 토큰값 넣기위한 설정
 				.securitySchemes(Arrays.asList(apiKey())).produces(getProduceContentTypes()).select()
-				.apis(RequestHandlerSelectors.any()).paths(PathSelectors.ant("/rest/**")).build();
+				.apis(RequestHandlerSelectors.any()).paths(PathSelectors.ant("/api/**")).build();
 	}
 
 	// swagger에서 jwt 토큰값 넣기위한 설정 -> JWT를 인증 헤더로 포함하도록 ApiKey 를 정의.
@@ -65,9 +67,9 @@ public class SwaggerConfig {
 		return produces;
 	}
 	
-	private ApiInfo getApiInfo() {
+    private ApiInfo getApiInfo() {
         return new ApiInfoBuilder()
                 .title("commerce-auth-v2")
                 .build();
-    	}
+    }
 }
