@@ -26,6 +26,7 @@ public class SwaggerConfig {
 	public Docket api() {
 		return new Docket(DocumentationType.SWAGGER_2).consumes(getConsumeContentTypes())
 				.host("combb.auth.com:9080")
+				.apiInfo(getApiInfo())
 				// swagger에서 jwt 토큰값 넣기위한 설정
 				.securityContexts(Arrays.asList(securityContext()))
 				// swagger에서 jwt 토큰값 넣기위한 설정
@@ -63,4 +64,10 @@ public class SwaggerConfig {
 		produces.add("application/json;charset=UTF-8");
 		return produces;
 	}
+	
+	private ApiInfo getApiInfo() {
+        return new ApiInfoBuilder()
+                .title("commerce-apigateway-v2")
+                .build();
+    	}
 }
