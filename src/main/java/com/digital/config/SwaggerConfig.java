@@ -69,7 +69,7 @@ public class SwaggerConfig {
 	
     private ApiInfo getApiInfo() {
         return new ApiInfoBuilder()
-                .title("commerce-auth-v1")
+                .title("commerce-auth-v2")
                 .build();
     }
 }
