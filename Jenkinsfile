@@ -46,8 +46,8 @@ pipeline {
       steps {
         script {
           echo "Deploy App START"
-          sh "/usr/local/bin/kubectl --kubeconfig=/home/jenkins/acloud-client.conf apply -f auth_deployment_v1.yaml"
-          sh "/usr/local/bin/kubectl --kubeconfig=/home/jenkins/acloud-client.conf set image deployments/commerce-auth auth-cotainer=192.168.100.12/bb-edu/commerce-auth:$BUILD_NUMBER -n bb-edu"
+          sh "/usr/local/bin/kubectl --kubeconfig=/home/jenkins/acloud-client.conf apply -f auth_deployment_v2.yaml"
+          sh "/usr/local/bin/kubectl --kubeconfig=/home/jenkins/acloud-client.conf set image deployments/commerce-auth auth-container=192.168.100.12/bb-edu/commerce-auth:$BUILD_NUMBER -n bb-edu"
           echo "Deploy App END"
         }
       }
