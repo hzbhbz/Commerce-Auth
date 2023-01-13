@@ -22,4 +22,4 @@ RUN chmod -R 755 /app/*
 
 RUN gradle build
 
-CMD ["java", "-javaagent:/app/agent.java/jennifer.jar", "-Djennifer.config=/app/agent.java/conf/commerce-auth-v1.conf", "-jar", "/app/Commerce-Auth/build/libs/Commerce-Auth-0.0.1-SNAPSHOT.jar"]
+CMD ["java", "-javaagent:/app/agent.java/jennifer.jar", "-Djennifer.config=/app/agent.java/conf/commerce-auth-v2.conf", "-jar", "/app/Commerce-Auth/build/libs/Commerce-Auth-0.0.1-SNAPSHOT.jar"]
